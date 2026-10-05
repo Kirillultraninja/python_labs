@@ -1,6 +1,6 @@
 def min_max(a):
     if len(a)==0:
-        return "ValueError"
+        return ValueError("ValueError")
     else:
         ma=a[0]
         mi=a[0]
@@ -39,7 +39,7 @@ def flatten(a):
     if f==0:
         return x
     else:
-        return "TypeError" 
+        return TypeError("TypeError(Строка не строка строк матрицы)")
 a1= [3, -1, 5, 5, 0]
 a2= [42]
 a3= [-5, -2, -9]
