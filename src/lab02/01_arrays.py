@@ -10,6 +10,7 @@ def min_max(a):
             if i<mi:
                 mi=i
         return (mi,ma)
+
 def unique_sorted(nach,kon,a):
     L=nach 
     R=kon
@@ -27,6 +28,18 @@ def unique_sorted(nach,kon,a):
     unique_sorted(nach,R,a)
     unique_sorted(L,kon,a)
     return a
+
+def flatten(a):
+    x=[]
+    f=0
+    for i in range(len(a)):
+        x+=a[i]
+        if isinstance(a[i], str):
+            f=1
+    if f==0:
+        return x
+    else:
+        return "TypeError" 
 a1= [3, -1, 5, 5, 0]
 a2= [42]
 a3= [-5, -2, -9]
@@ -39,12 +52,23 @@ m1=list(set(a6))
 m2=list(set(a4))
 m3=list(set(a8))
 m4=list(set(a9))
-#print(f"{a1} --> ", min_max(a1))
-#print(f"{a2} --> ", min_max(a2))
-#print(f"{a3} --> ", min_max(a3))
-#print(f"{a4} --> ", min_max(a4))
-#print(f"{a5} --> ", min_max(a5))
+print("min_max")
+print(f"{a1} --> ", min_max(a1))
+print(f"{a2} --> ", min_max(a2))
+print(f"{a3} --> ", min_max(a3))
+print(f"{a4} --> ", min_max(a4))
+print(f"{a5} --> ", min_max(a5))
+print("unique_sorted")
 print(f"{a6} -->", unique_sorted(0,len(m1)-1,m1))
 print(f"{a4} -->", unique_sorted(0,len(m2)-1,m2))
 print(f"{a8} -->", unique_sorted(0,len(m3)-1,m3))
 print(f"{a9} -->", unique_sorted(0,len(m4)-1,m4))
+print("flatten")
+b1 = [[1, 2], [3, 4]]
+b2 =[[1, 2], (3, 4, 5)]
+b3= [[1], [], [2, 3]]
+b4 =[[1, 2], "ab"]
+print(f"{b1} --> ", flatten(b1))
+print(f"{b2} --> ", flatten(b2))
+print(f"{b3} --> ", flatten(b3))
+print(f"{b4} --> ", flatten(b4))
