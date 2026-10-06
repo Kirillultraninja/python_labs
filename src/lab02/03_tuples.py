@@ -7,6 +7,8 @@ def format_record(a):
         return ValueError("ValueError: GPA в неправильном диапозоне")
     if not(isinstance(a[2],float)):
         return TypeError("TypeError: GPA неверного типа")
+    if not(isinstance(a,tuple)):
+        return TypeError("TypeError: Должен быть кортеж")
     s1= a[0]
     f=0
     iniz = ""
