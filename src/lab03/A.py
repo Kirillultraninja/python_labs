@@ -19,6 +19,13 @@ def count_freq(tokens: list[str]):
         m[sorted(list(set(tokens)))[i]] = tokens.count(sorted(list(set(tokens)))[i])
     return m
 
+def top_n(freq: dict[str, int], n: int = 5):
+    g = dict(sorted(freq.items(), key =lambda x: -x[1]))
+    b= sorted(g.items(),key =lambda x: x[0])
+    return b[:n]
+
+    
+
 print(rf'"ПрИвЕт\nМИр\t"',"-->",normalize("ПрИвЕт\nМИр\t"))
 print(rf'"ёжик, Ёлка"  (yo2e=True) ',"-->",normalize("ёжик, Ёлка"))
 print(rf'"Hello\r\nWorld"',"-->",normalize("Hello\r\nWorld"))
@@ -32,4 +39,7 @@ print(rf'"emoji 😀 не слово"',"-->",tokenize("emoji 😀 не слов�
 print()
 print("токены", str(["a","b","a","c","b","a"]),"-->","частоты",count_freq(["a","b","a","c","b","a"]))
 print("токены", str(["bb","aa","bb","aa","cc"]),"-->","частоты",count_freq(["bb","aa","bb","aa","cc"]))
+print()
+print("top_n(count_freq("+str(["a","b","a","c","b","a"])+" 2)","-->",top_n(count_freq(["a","b","a","c","b","a"]), 2))
+print("top_n(count_freq("+str(["bb","aa","bb","aa","cc"])+" 2)","-->",top_n(count_freq(["bb","aa","bb","aa","cc"]), 2))
 print()

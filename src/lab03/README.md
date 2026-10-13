@@ -25,4 +25,11 @@
 Результат работы:
 
 ![Результат count_freq](/images/lab03/A03r.png)
-asdasd
+
+Функция top_n:
+
+![Код функции top_n](/images/lab03/A04.png)
+
+Результат работы:
+
+![Результат top_n](/images/lab03/A04r.png)
