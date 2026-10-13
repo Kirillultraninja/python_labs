@@ -32,4 +32,4 @@
 
 Результат работы:
 
-![Результат top_n](/images/lab03/A03r.png)
+![Результат top_n](/images/lab03/A04r.png)
