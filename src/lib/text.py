@@ -24,20 +24,51 @@ def top_n(freq: dict[str, int], n: int = 5):
     b= sorted(g.items(),key =lambda x: x[0])
     return b[:n]
 
-print(rf'"ПрИвЕт\nМИр\t"',"-->",f'"{normalize("ПрИвЕт\nМИр\t")}"')
-print(rf'"ёжик, Ёлка"  (yo2e=True) ',"-->",f'"{normalize("ёжик, Ёлка")}"')
-print(rf'"Hello\r\nWorld"',"-->",f'"{normalize("Hello\r\nWorld")}"')
-print(rf'"  двойные   пробелы  "',"-->",f'"{normalize("  двойные   пробелы  ")}"')
-print()
-print(rf'"привет мир"',"-->",tokenize("привет мир"))
-print(rf'"hello,world!!!"',"-->",tokenize("hello,world!!!"))
-print(rf'"по-настоящему круто"',"-->",tokenize("по-настоящему круто")) 
-print(rf'"2025 год"',"-->",tokenize("2025 год"))
-print(rf'"emoji 😀 не слово"',"-->",tokenize("emoji 😀 не слово"))
-print()
-print("токены", str(["a","b","a","c","b","a"]),"-->","частоты",count_freq(["a","b","a","c","b","a"]))
-print("токены", str(["bb","aa","bb","aa","cc"]),"-->","частоты",count_freq(["bb","aa","bb","aa","cc"]))
-print()
-print("top_n(count_freq("+str(["a","b","a","c","b","a"])+", 2)","-->",top_n(count_freq(["a","b","a","c","b","a"]), 2))
-print("top_n(count_freq("+str(["bb","aa","bb","aa","cc"])+", 2)","-->",top_n(count_freq(["bb","aa","bb","aa","cc"]), 2))
-print()
+if __name__ == '__main__':
+    assert normalize("ПрИвЕт\nМИр\t") == "привет мир"
+    assert normalize("ёжик, Ёлка") == "ежик, елка"
+
+    assert tokenize("привет, мир!") == ["привет", "мир"]
+    assert tokenize("по-настоящему круто") == ["по-настоящему", "круто"]
+    assert tokenize("2025 год") == ["2025", "год"]
+
+
+    freq = count_freq(["a", "b", "a", "c", "b", "a"])
+    assert freq == {"a": 3, "b": 2, "c": 1}
+    assert top_n(freq, 2) == [("a", 3), ("b", 2)]
+
+    freq2 = count_freq(["bb", "aa", "bb", "aa", "cc"])
+    assert top_n(freq2, 2) == [("aa", 2), ("bb", 2)]
+
+    print('Все кейсы успешно пройдены!')
+    if input('хотите увидеть тест кейсы? [Y/n]') in ('y', 'Y', ''):
+        print('Тест кейсы:')
+
+        print(fr'''
+        normalize
+
+        "ПрИвЕт\nМИр\t" -> "{normalize('ПрИвЕт\nМИр\t')}"
+        "ёжик, Ёлка" -> "{normalize('ёжик, Ёлка')}"
+        "Hello\r\nWorld" -> "{normalize('Hello\r\nWorld')}"
+        "  двойные   пробелы  " -> "{normalize('  двойные   пробелы  ')}"
+        ''')
+
+        print(fr'''
+        tokenize
+
+        "привет мир" -> "{tokenize('привет мир')}"
+        "hello,world!!!" -> "{tokenize('hello,world!!!')}"
+        "по-настоящему круто" -> "{tokenize('по-настоящему круто')}"
+        "2025 год" -> "{tokenize('2025 год')}"
+        "emoji 😀 не слово" -> "{tokenize('emoji 😀 не слово')}"
+        ''')
+
+        print(fr'''
+        count_freq + top_n
+
+        токены ["a","b","a","c","b","a"] -> частоты "{count_freq(['a', 'b', 'a', 'c', 'b', 'a'])}";
+        top_n(..., n=2) -> "{top_n(count_freq(['a', 'b', 'a', 'c', 'b', 'a']), 2)}"
+
+        токены ["bb","aa","bb","aa","cc"] -> "{count_freq(['bb', 'aa', 'bb', 'aa', 'cc'])}";
+        top_n(..., n=2) → "{top_n(count_freq(['bb', 'aa', 'bb', 'aa', 'cc']), 2)}"
+        ''')
