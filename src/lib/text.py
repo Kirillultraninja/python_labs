@@ -8,7 +8,7 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
     if yo2e:
         text = text.replace("Ё", "E").replace("ё","е")
     text = " ".join(text.split())
-    return f'"{text}"'
+    return text
 
 def tokenize(text: str):
     return re.findall(r"\w+(?:-\w+)*", text)
@@ -24,10 +24,10 @@ def top_n(freq: dict[str, int], n: int = 5):
     b= sorted(g.items(),key =lambda x: x[0])
     return b[:n]
 
-print(rf'"ПрИвЕт\nМИр\t"',"-->",normalize("ПрИвЕт\nМИр\t"))
-print(rf'"ёжик, Ёлка"  (yo2e=True) ',"-->",normalize("ёжик, Ёлка"))
-print(rf'"Hello\r\nWorld"',"-->",normalize("Hello\r\nWorld"))
-print(rf'"  двойные   пробелы  "',"-->",normalize("  двойные   пробелы  "))
+print(rf'"ПрИвЕт\nМИр\t"',"-->",f'"{normalize("ПрИвЕт\nМИр\t")}"')
+print(rf'"ёжик, Ёлка"  (yo2e=True) ',"-->",f'"{normalize("ёжик, Ёлка")}"')
+print(rf'"Hello\r\nWorld"',"-->",f'"{normalize("Hello\r\nWorld")}"')
+print(rf'"  двойные   пробелы  "',"-->",f'"{normalize("  двойные   пробелы  ")}"')
 print()
 print(rf'"привет мир"',"-->",tokenize("привет мир"))
 print(rf'"hello,world!!!"',"-->",tokenize("hello,world!!!"))
