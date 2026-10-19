@@ -1,3 +1,5 @@
+
+from random import *
 def format_record(a):
     if not isinstance(a, tuple):
         raise TypeError("Должен быть кортеж")
@@ -42,7 +44,7 @@ def format_record(a):
     s += s3
     s += "GPA" + " " + f"{a[2]:.2f}"
     return s
-a1 = ("Иванов Иван Иванович", "BIVT-25", 4.6)
+'''a1 = ("Иванов Иван Иванович", "BIVT-25", 4.6)
 a2 = ("Петров Пётр", "IKBO-12", 5.0)
 a3 = ("Петров Пётр Петрович", "IKBO-12", 5.0)
 a4 = ("  сидорова  анна   сергеевна ", "ABB-01", 3.999)
@@ -51,4 +53,6 @@ print(f"format_record({a1}) -->", format_record(a1))
 print(f"format_record({a2}) -->", format_record(a2))
 print(f"format_record({a3}) -->", format_record(a3))
 print(f"format_record({a4}) -->", format_record(a4))
-print(f"format_record({test}) -->", format_record(test))
+print(f"format_record({test}) -->", format_record(test))'''
+
+print(2608518%15 +1)
