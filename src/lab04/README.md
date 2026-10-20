@@ -16,7 +16,7 @@
 
 Функция осуществляет проверку существования родительского каталога и, при его отсутствии, рекурсивно создает его, включая всю цепочку недостающих вложенных директорий.
 
-4.Запуск кода:
+Запуск кода:
 
 ![Демонстрация работы](/images/lab04/report_csv.png)
 
@@ -30,4 +30,17 @@
 
 ![alt](/images/lab04/text_report.png)
 
-Запуск: 
+Запуск: python src/lab04/text_report.py --in data/lab04/input.txt --encoding cp1251 (кодировка cp1251)
+
+![alt](/images/lab04/testB.png)
+
+Запуск: python src/lab04/text_report.py --in data/lab04/a.txt data/lab04/b.txt (для нескольких файлов)
+
+![alt](/images/lab04/testB3.png)
+
+# Отчёт файлов
+
+![alt](/images/lab04/report_per_file.png)
+
+![alt](/images/lab04/report_total.png)
+
