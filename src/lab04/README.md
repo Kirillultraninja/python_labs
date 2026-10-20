@@ -34,7 +34,7 @@
 
 ![alt](/images/lab04/testB.png)
 
-Запуск: python src/lab04/text_report.py --in data/lab04/a.txt data/lab04/b.txt (для нескольких файлов)
+Запуск: python -m src.lab04.text_report --in data/lab04/a.txt data/lab04/b.txt --per-file data/lab04/report_per_file.csv --total data/lab04/report_total.csv (для нескольких файлов)
 
 ![alt](/images/lab04/testB3.png)
 
