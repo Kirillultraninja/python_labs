@@ -38,9 +38,15 @@
 
 ![alt](/images/lab04/testB3.png)
 
+# Проверка краевых случаев и мини-тестов
+
+![alt](/images/lab04/mini_test.png)
+
 # Отчёт файлов
 
 ![alt](/images/lab04/report_per_file.png)
 
 ![alt](/images/lab04/report_total.png)
+
+
 
