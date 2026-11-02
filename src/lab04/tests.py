@@ -52,7 +52,6 @@ def run_tests():
     except ValueError as e:
         print(f"6. Успешно перехвачен ValueError: {e}")
 
-    print("\n--- Все тесты пройдены успешно! ---")
 
 if __name__ == "__main__":
     setup_test_data()

@@ -107,6 +107,6 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 
 if __name__ == "__main__":
     # Демонстрационный запуск: python -m src.lab05.json_csv
-    json_to_csv("data/samples/people.json", "data/out/people_from_json.csv")
-    csv_to_json("data/samples/people.csv", "data/out/people_from_csv.json")
+    json_to_csv("data/samples/people.json", "data/out/from_json.csv")
+    csv_to_json("data/samples/people.csv", "data/out/from_csv.json")
     print("JSON ↔ CSV конвертации выполнены.")

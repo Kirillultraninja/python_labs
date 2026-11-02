@@ -65,5 +65,5 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 
 if __name__ == "__main__":
     # Демонстрационный запуск: python -m src.lab05.csv_xlsx
-    csv_to_xlsx("data/samples/people.csv", "data/out/people.xlsx")
+    csv_to_xlsx("data/samples/people.csv", "data/out/tabl.xlsx")
     print("CSV → XLSX конвертация выполнена.")
