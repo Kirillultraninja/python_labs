@@ -1,5 +1,3 @@
-"""Модуль для конвертации CSV в XLSX с использованием openpyxl."""
-
 import csv
 from pathlib import Path
 from openpyxl import Workbook
@@ -12,20 +10,6 @@ def _ensure_parent_dir(path: Path) -> None:
 
 
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
-    """Конвертирует CSV в XLSX.
-
-    Первая строка CSV — заголовок. Лист называется "Sheet1".
-    Ширина колонок устанавливается автоматически по максимальной длине
-    текста в колонке (но не менее 8 символов).
-
-    Args:
-        csv_path: Путь к исходному CSV-файлу.
-        xlsx_path: Путь к создаваемому XLSX-файлу.
-
-    Raises:
-        FileNotFoundError: Если исходный файл не существует.
-        ValueError: Если CSV пуст или не содержит заголовка.
-    """
     csv_file = Path(csv_path)
     if not csv_file.exists():
         raise FileNotFoundError(f"Файл не найден: {csv_path}")

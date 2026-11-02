@@ -1,13 +1,3 @@
-"""Модуль для конвертации между JSON и CSV.
-
-Реализует функции:
-- json_to_csv: JSON (список словарей) → CSV.
-- csv_to_json: CSV → JSON (список словарей).
-
-Все функции работают только с файлами (без вывода в stdout),
-используют кодировку UTF-8 и стандартные библиотеки json, csv, pathlib.
-"""
-
 import csv
 import json
 from pathlib import Path
@@ -20,19 +10,6 @@ def _ensure_parent_dir(path: Path) -> None:
 
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
-    """Преобразует JSON-файл в CSV.
-
-    Поддерживает список словарей [{...}, {...}]. Отсутствующие поля
-    заполняются пустыми строками. Порядок колонок — как в первом объекте.
-
-    Args:
-        json_path: Путь к исходному JSON-файлу.
-        csv_path: Путь к создаваемому CSV-файлу.
-
-    Raises:
-        FileNotFoundError: Если исходный файл не существует.
-        ValueError: Если JSON пуст, содержит не список или элементы не словари.
-    """
     json_file = Path(json_path)
     if not json_file.exists():
         raise FileNotFoundError(f"Файл не найден: {json_path}")
@@ -70,19 +47,6 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
-    """Преобразует CSV в JSON (список словарей).
-
-    Первая строка CSV считается заголовком. Значения сохраняются как строки.
-    Результат записывается с параметрами ensure_ascii=False и indent=2.
-
-    Args:
-        csv_path: Путь к исходному CSV-файлу.
-        json_path: Путь к создаваемому JSON-файлу.
-
-    Raises:
-        FileNotFoundError: Если исходный файл не существует.
-        ValueError: Если CSV пуст или не содержит заголовка.
-    """
     csv_file = Path(csv_path)
     if not csv_file.exists():
         raise FileNotFoundError(f"Файл не найден: {csv_path}")
