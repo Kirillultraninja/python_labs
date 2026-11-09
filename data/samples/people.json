@@ -2,5 +2,5 @@
   {"name": "Kirill", "age": 17, "city": "Moscow"},
   {"name": "Sergey", "age": 31, "city": "Volgograd"},
   {"name": "Elena", "age": 45, "city": "Volzhsky"},
-  {"name": "Artem", "age": 16, "city": "Lipezk"}
+  {"name": "Artem", "age": null, "city": "Lipezk"}
 ]
