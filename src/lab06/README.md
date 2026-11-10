@@ -163,9 +163,9 @@ python -m src.lab06.cli_convert csv2xlsx --help
 
 1. `cat --input data\samples\people.txt -n` — вывод файла с номерами строк;
 2. `stats --input data\samples\people.txt --top 5` — вывод пяти наиболее частых слов;
-3. `json_to_csv` — конвертация JSON в CSV;
-4. `csv_to_json` — конвертация CSV в JSON;
-5. `csv_to_xlsx` — конвертация CSV в XLSX;
+3. `json2csv` — конвертация JSON в CSV;
+4. `csv2json` — конвертация CSV в JSON;
+5. `csv2xlsx` — конвертация CSV в XLSX;
 6. `--help` для общего CLI и каждой подкоманды.
 
 Результаты конвертаций сохраняются в `data\out\`, а скриншоты запусков
