@@ -38,33 +38,19 @@ def cmd_cat(args: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="CLI-утилиты лабораторной №6 (текстовые команды)"
-    )
+    parser = argparse.ArgumentParser(description="CLI-утилиты лабораторной №6 (текстовые команды)")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # --- подкоманда stats ---
-    stats_parser = subparsers.add_parser(
-        "stats", help="Анализ частот слов в тексте"
-    )
-    stats_parser.add_argument(
-        "--input", required=True, help="Путь к входному текстовому файлу"
-    )
-    stats_parser.add_argument(
-        "--top", type=int, default=5, help="Количество топ-слов (по умолчанию 5)"
-    )
+    stats_parser = subparsers.add_parser("stats", help="Анализ частот слов в тексте")
+    stats_parser.add_argument("--input", required=True, help="Путь к входному текстовому файлу")
+    stats_parser.add_argument("--top", type=int, default=5, help="Количество топ-слов (по умолчанию 5)")
     stats_parser.set_defaults(func=cmd_stats)
 
     # --- подкоманда cat ---
-    cat_parser = subparsers.add_parser(
-        "cat", help="Вывод содержимого файла построчно"
-    )
-    cat_parser.add_argument(
-        "--input", required=True, help="Путь к файлу"
-    )
-    cat_parser.add_argument(
-        "-n", action="store_true", help="Нумеровать строки"
-    )
+    cat_parser = subparsers.add_parser("cat", help="Вывод содержимого файла построчно")
+    cat_parser.add_argument("--input", required=True, help="Путь к файлу")
+    cat_parser.add_argument( "-n", action="store_true", help="Нумеровать строки")
     cat_parser.set_defaults(func=cmd_cat)
 
     args = parser.parse_args()

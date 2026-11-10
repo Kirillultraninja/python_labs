@@ -20,9 +20,7 @@ def cmd_csv2xlsx(args: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="CLI-конвертеры данных лабораторной №6"
-    )
+    parser = argparse.ArgumentParser(description="CLI-конвертеры данных лабораторной №6")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     commands = [
@@ -41,15 +39,15 @@ def main() -> None:
 
     try:
         args.func(args)
-        print(f"✅ Успешно: {args.input} → {args.output}")
+        print(f"Успешно: {args.input} → {args.output}")
     except FileNotFoundError as e:
-        print(f"❌ Ошибка: {e}", file=sys.stderr)
+        print(f"Ошибка: {e}", file=sys.stderr)
         sys.exit(1)
     except ValueError as e:
-        print(f"❌ Ошибка валидации: {e}", file=sys.stderr)
+        print(f"Ошибка валидации: {e}", file=sys.stderr)
         sys.exit(1)
     except Exception as e:
-        print(f"❌ Ошибка: {e}", file=sys.stderr)
+        print(f"Ошибка: {e}", file=sys.stderr)
         sys.exit(1)
 
 
