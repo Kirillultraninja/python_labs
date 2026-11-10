@@ -94,7 +94,7 @@ python -m src.lab06.cli_convert json2csv `
 
 ![Пример к json_to_csv](../../images/lab06/people_json.png)
 
-Результат заупска:
+Результат запуска:
 
 ![Результат](../../images/lab06/people_csv.png)
 
